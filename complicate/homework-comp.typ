@@ -1,5 +1,5 @@
 #let project(course: "课程作业", number: int(0), name: "姓名", id: "PB2XXXXXXX",
-             body) = {
+             code_with_line_number: true, body) = {
     // Set the document's basic properties.
     let author = name + " " + id 
     let title = course + " " + str(number)
@@ -56,6 +56,34 @@
         inset: 10pt,
         radius: 4pt,
     )
+
+    // Code block line numbers
+    show raw.where(block: true): it => {
+        if not code_with_line_number { return it }
+        let lines = it.text.split("\n")
+        let length = lines.len()
+        let i = 0
+        let left_str = while i < length {
+            i = i + 1
+            str(i) + "\n"
+        }
+        grid(
+            columns: (auto, 1fr),
+            align(
+                right, 
+                block(
+                    inset: (
+                        top: 10pt, 
+                        bottom: 0pt, 
+                        left: 0pt, 
+                        right: 5pt
+                    ), 
+                    left_str
+                )
+            ),
+            align(left, it),
+        )
+    }
 
     body
 }

@@ -5,6 +5,7 @@
     number: 0,
     name: "姓名",
     id: "PB2XXXXXXX",
+    code_with_line_number: true,
 )
 
 #question()
