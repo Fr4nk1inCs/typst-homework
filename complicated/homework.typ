@@ -1,4 +1,4 @@
-#let project(course: "课程作业", number: int(0), name: "姓名", id: "PB2XXXXXXX",
+#let homework(course: "课程作业", number: int(0), name: "姓名", id: "PB2XXXXXXX",
              code_with_line_number: true, body) = {
     // Set the document's basic properties.
     let author = name + " " + id 

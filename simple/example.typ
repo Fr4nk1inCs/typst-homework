@@ -1,6 +1,6 @@
 #import "homework.typ": *
 
-#show: project.with(
+#show: homework.with(
     course: "课程作业",
     number: 0,
     name: "姓名",
@@ -18,8 +18,8 @@
 
 #question(number: 1.1)
 
-$ i ħ (diff)/(diff t) Phi(arrow(r), t) = 
-[- ħ/(2m) nabla^2 + V(arrow(r))] Phi(arrow(r), t) $
+$ upright(i) planck.reduce (diff)/(diff t) Phi(arrow(r), t) = 
+[- planck.reduce/(2m) nabla^2 + V(arrow(r))] Phi(arrow(r), t) $
 
 ```rust
 fn main() {
