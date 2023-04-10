@@ -1,11 +1,11 @@
 #let homework(course: "课程作业", number: int(0), name: "姓名", id: "PB2XXXXXXX",
              code_with_line_number: true, body) = {
     // Set the document's basic properties.
-    let author = name + " " + id 
+    let author = name + " " + id
     let title = course + " " + str(number)
     set document(author: (author, ), title: title)
     set page(
-        numbering: "1", 
+        numbering: "1",
         number-align: center,
         // Running header.
         header-ascent: 14pt,
@@ -31,7 +31,7 @@
     // Title row.
     align(center)[
         #block(text(weight: 700, 1.75em, title))
-        
+
         #v(0.25em)
 
         #author
@@ -70,15 +70,18 @@
         grid(
             columns: (auto, 1fr),
             align(
-                right, 
+                right,
                 block(
                     inset: (
-                        top: 10pt, 
-                        bottom: 0pt, 
-                        left: 0pt, 
+                        top: 10pt,
+                        bottom: 10pt,
+                        left: 0pt,
                         right: 5pt
-                    ), 
-                    left_str
+                    ),
+                    [
+                      #show par: set block(above: 1.2em, below: 1.2em)
+                      #left_str
+                    ]
                 )
             ),
             align(left, it),
@@ -94,8 +97,8 @@
 #let question(number: none) = {
     if number == none {
         strong([
-            #question_counter.display(question_name + " 1.") 
-            #v(-0.9em) 
+            #question_counter.display(question_name + " 1.")
+            #v(-0.9em)
             #line(length: 100%)
             #v(-0.6em)
         ])
