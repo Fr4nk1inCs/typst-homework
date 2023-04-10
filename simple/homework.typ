@@ -20,7 +20,7 @@
             )
         }),
     )
-    set text(font: "Source Han Serif SC", lang: "en")
+    set text(font: "Source Han Serif SC", lang: "zh")
     show math.equation: set text(font: "New Computer Modern Math", weight: 400)
 
     // Set paragraph spacing.
